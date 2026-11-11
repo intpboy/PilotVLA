@@ -1,6 +1,6 @@
 # Act on What You See: Target-directed Noise Optimization for Frozen Flow-Matching Policies
 
-**Sunghun Kim, Junho Kim, Geo Ahn, Jinwoo Choi**
+**Junpyo Hong, Sunghun Kim, Junho Kim, Geo Ahn, Jinwoo Choi**
 Kyung Hee University
 
 Under review at KSC 2026 (Korea Software Congress)
@@ -123,10 +123,10 @@ goal-perturbation robustness ablation.
 ## Citation
 
 ```bibtex
-@inproceedings{kim2026tano,
+@inproceedings{hong2026tano,
   title     = {Act on What You See: Target-directed Noise Optimization for
                Frozen Flow-Matching Policies},
-  author    = {Kim, Sunghun and Kim, Junho and Ahn, Geo and Choi, Jinwoo},
+  author    = {Hong, Junpyo and Kim, Sunghun and Kim, Junho and Ahn, Geo and Choi, Jinwoo},
   booktitle = {Korea Software Congress (KSC)},
   year      = {2026}
 }

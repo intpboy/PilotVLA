@@ -2,6 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
 title: "TaNO: Target-directed Noise Optimization for Frozen Flow-Matching Policies"
 authors:
+  - family-names: Hong
+    given-names: Junpyo
   - family-names: Kim
     given-names: Sunghun
   - family-names: Kim
@@ -14,6 +16,8 @@ preferred-citation:
   type: conference-paper
   title: "Act on What You See: Target-directed Noise Optimization for Frozen Flow-Matching Policies"
   authors:
+    - family-names: Hong
+      given-names: Junpyo
     - family-names: Kim
       given-names: Sunghun
     - family-names: Kim
