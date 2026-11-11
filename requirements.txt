@@ -1,0 +1,10 @@
+# Core dependencies (hard imports in this repository)
+numpy
+torch
+imageio[ffmpeg]
+
+# Policy + simulation stack. Install lerobot with LIBERO support:
+#   pip install "lerobot[libero]"
+# This provides the `lerobot` and `libero` imports (pi0.5 policy, LIBERO envs,
+# robosuite/MuJoCo simulation). For LIBERO-Plus evaluation, additionally clone
+# https://github.com/sylvestf/LIBERO-plus and run lplus/setup_liberoplus.py.

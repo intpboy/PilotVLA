@@ -1,0 +1,482 @@
+[
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 609,
+  "name": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_view_0_0_100_2_352_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 2,
+  "id": 612,
+  "name": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_view_13_15_100_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 2,
+  "id": 612,
+  "name": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_view_13_15_100_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 652,
+  "name": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate_view_0_0_122_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 2,
+  "id": 657,
+  "name": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate_view_0_0_100_6_8_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 2,
+  "id": 657,
+  "name": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate_view_0_0_100_6_8_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 754,
+  "name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_100_10_356_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 738,
+  "name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_143_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 3,
+  "id": 738,
+  "name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_143_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 834,
+  "name": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_view_0_0_165_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 833,
+  "name": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_view_0_0_164_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 3,
+  "id": 833,
+  "name": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_view_0_0_164_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 927,
+  "name": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_view_0_0_100_356_10_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 916,
+  "name": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_view_0_0_182_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 4,
+  "id": 915,
+  "name": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_view_0_0_181_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 618,
+  "name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_view_0_0_100_4_6_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 617,
+  "name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_view_0_0_120_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 624,
+  "name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_view_16_15_100_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 689,
+  "name": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_view_0_0_133_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 730,
+  "name": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_view_58_0_100_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 3,
+  "id": 730,
+  "name": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_view_58_0_100_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 796,
+  "name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate_view_0_0_100_350_8_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 784,
+  "name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate_view_0_0_151_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 810,
+  "name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate_view_289_15_100_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 882,
+  "name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate_view_0_0_100_354_8_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 872,
+  "name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate_view_0_0_171_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 876,
+  "name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate_view_0_0_175_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 958,
+  "name": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_100_358_6_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 950,
+  "name": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_193_0_0_initstate_0"
+ },
+ {
+  "axis": "Camera Viewpoints",
+  "base": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 967,
+  "name": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_view_345_15_100_0_0_initstate_0"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 259,
+  "name": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_1"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 263,
+  "name": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_131"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 270,
+  "name": "pick_up_the_black_bowl_between_the_plate_and_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_231"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 329,
+  "name": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_13"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 334,
+  "name": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_123"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 345,
+  "name": "pick_up_the_black_bowl_from_table_center_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_283"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 388,
+  "name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_55"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 403,
+  "name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_235"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 393,
+  "name": "pick_up_the_black_bowl_in_the_top_drawer_of_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_125"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 460,
+  "name": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_17"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 472,
+  "name": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_327"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 482,
+  "name": "pick_up_the_black_bowl_next_to_the_cookie_box_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_457"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 530,
+  "name": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_19"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 533,
+  "name": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_109"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 553,
+  "name": "pick_up_the_black_bowl_next_to_the_plate_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_339"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 291,
+  "name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_42"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 294,
+  "name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_112"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 298,
+  "name": "pick_up_the_black_bowl_next_to_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_162"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 364,
+  "name": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_114"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 372,
+  "name": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_294"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 382,
+  "name": "pick_up_the_black_bowl_on_the_cookie_box_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_444"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 428,
+  "name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_16"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 433,
+  "name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_146"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 430,
+  "name": "pick_up_the_black_bowl_on_the_ramekin_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_116"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 487,
+  "name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_8"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 498,
+  "name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_188"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 517,
+  "name": "pick_up_the_black_bowl_on_the_stove_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_378"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 1,
+  "difficulty_got": 1,
+  "id": 567,
+  "name": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_10"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 3,
+  "difficulty_got": 3,
+  "id": 582,
+  "name": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_240"
+ },
+ {
+  "axis": "Robot Initial States",
+  "base": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate",
+  "difficulty_want": 5,
+  "difficulty_got": 5,
+  "id": 585,
+  "name": "pick_up_the_black_bowl_on_the_wooden_cabinet_and_place_it_on_the_plate_view_0_0_100_0_0_initstate_270"
+ }
+]
