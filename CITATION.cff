@@ -14,7 +14,7 @@ authors:
     given-names: Jinwoo
 preferred-citation:
   type: conference-paper
-  title: "Act on What You See: Target-directed Noise Optimization for Frozen Flow-Matching Policies"
+  title: "PilotVLA: Training-Free Steering of Flow-Matching VLAs via Initial Noise"
   authors:
     - family-names: Hong
       given-names: Junpyo

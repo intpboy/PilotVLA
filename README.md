@@ -1,4 +1,4 @@
-# Act on What You See: Target-directed Noise Optimization for Frozen Flow-Matching Policies
+# PilotVLA: Training-Free Steering of Flow-Matching VLAs via Initial Noise
 
 **Junpyo Hong, Sunghun Kim, Junho Kim, Geo Ahn, Jinwoo Choi**
 Kyung Hee University
@@ -124,8 +124,8 @@ goal-perturbation robustness ablation.
 
 ```bibtex
 @inproceedings{hong2026pilotvla,
-  title     = {Act on What You See: Target-directed Noise Optimization for
-               Frozen Flow-Matching Policies},
+  title     = {PilotVLA: Training-Free Steering of Flow-Matching VLAs via
+               Initial Noise},
   author    = {Hong, Junpyo and Kim, Sunghun and Kim, Junho and Ahn, Geo and Choi, Jinwoo},
   booktitle = {Korea Software Congress (KSC)},
   year      = {2026}
