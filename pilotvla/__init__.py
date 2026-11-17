@@ -1,1 +1,1 @@
-"""PilotVLA: policy steering via initial noise for language-specified object targeting."""
+"""PilotVLA: policy steering by initial-noise latent optimization at test time."""

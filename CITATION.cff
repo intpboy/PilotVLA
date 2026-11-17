@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
-title: "PilotVLA: Policy steering via Initial noise for Language-specified Object Targeting"
+title: "PilotVLA: Policy steering by Initial-noise Latent Optimization at Test time"
 authors:
   - family-names: Hong
     given-names: Junpyo

@@ -9,7 +9,7 @@ Under review at KSC 2026 (Korea Software Congress)
   <img src="assets/teaser.png" width="70%" alt="PilotVLA teaser">
 </p>
 
-**PilotVLA** (**P**olicy steering via **I**nitial noise for **L**anguage-specified **O**bject **T**argeting) is a zero-training,
+**PilotVLA** (**P**olicy steering by **I**nitial-noise **L**atent **O**ptimization at **T**est time) is a zero-training,
 test-time steering method for flow-matching VLA policies such as $\pi_{0.5}$.
 When the test-time instruction or object layout deviates from the training
 distribution (e.g., target objects are swapped), a frozen policy fails in a
