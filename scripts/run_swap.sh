@@ -25,7 +25,7 @@ EXTRA=${EXTRA:-}
 for COND in $CONDS; do
   pids=()
   for g in $(seq 0 $((NGPU - 1))); do
-    CUDA_VISIBLE_DEVICES=$g python "$REPO_ROOT/tano/rollout_swap.py" \
+    CUDA_VISIBLE_DEVICES=$g python "$REPO_ROOT/pilotvla/rollout_swap.py" \
       --out "$OUT" --eps "$EPS" --cond "$COND" $EXTRA \
       --gpu "$g" --ngpu "$NGPU" &
     pids+=($!)
@@ -37,7 +37,7 @@ for COND in $CONDS; do
   # Rollouts are resumable (meta.json skip): if a shard died, a single
   # sweep process picks up whatever is missing.
   if [ $fail -eq 1 ]; then
-    CUDA_VISIBLE_DEVICES=0 python "$REPO_ROOT/tano/rollout_swap.py" \
+    CUDA_VISIBLE_DEVICES=0 python "$REPO_ROOT/pilotvla/rollout_swap.py" \
       --out "$OUT" --eps "$EPS" --cond "$COND" $EXTRA --gpu 0 --ngpu 1
   fi
   echo "[run_swap] $COND done"

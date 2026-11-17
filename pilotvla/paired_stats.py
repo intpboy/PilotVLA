@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """Paired statistics for swap rollouts: baseline vs steered.
 
-Reads per-episode meta.json files written by tano/rollout_swap.py and reports
+Reads per-episode meta.json files written by pilotvla/rollout_swap.py and reports
 Wilson CIs, the paired success-rate difference, a continuity-corrected McNemar
 test, a scene-clustered bootstrap, and a per-scene breakdown. Pairs are formed
 over episodes present in BOTH condition cells (identical seeds by design).
 
 Usage:
-  python -m tano.paired_stats --root OUT_DIR --key asked_in_basket \
+  python -m pilotvla.paired_stats --root OUT_DIR --key asked_in_basket \
       --none-tag none --steer-tag noiseopt10x0.5-r10
-  python -m tano.paired_stats --root OUT_DIR --key env_success \
+  python -m pilotvla.paired_stats --root OUT_DIR --key env_success \
       --none-tag posnone --steer-tag posnoiseopt10x0.5-r10
 """
 import argparse

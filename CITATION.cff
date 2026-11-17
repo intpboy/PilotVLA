@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the paper below."
-title: "TaNO: Target-directed Noise Optimization for Frozen Flow-Matching Policies"
+title: "PilotVLA: Policy steering via Initial noise for Language-specified Object Targeting"
 authors:
   - family-names: Hong
     given-names: Junpyo

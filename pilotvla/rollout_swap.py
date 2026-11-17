@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Swap-benchmark rollouts for a frozen pi0.5 with test-time steering (TaNO).
+"""Swap-benchmark rollouts for a frozen pi0.5 with test-time steering (PilotVLA).
 
 Benchmark: 10 libero_object scenes x all in-scene distractors = 50 swap cells.
   - instruction swap (default): the prompt asks for a distractor instead of the
@@ -11,7 +11,7 @@ Benchmark: 10 libero_object scenes x all in-scene distractors = 50 swap cells.
 
 Conditions (--cond):
   none      frozen policy, no intervention (baseline)
-  noiseopt  TaNO: optimize ONLY the sampler's initial noise through a
+  noiseopt  PilotVLA: optimize ONLY the sampler's initial noise through a
             differentiable Euler unrolling of the flow ODE, minimizing a cosine
             loss between the chunk's planar displacement and the goal direction
   guide     flow guidance: per-Euler-step normalized gradient update on x_t
@@ -31,7 +31,7 @@ unsteered conditions share identical initial states and sampled noise
 every run resumable.
 
 Usage:
-  python -m tano.rollout_swap --out DIR --cond noiseopt [--gpu G --ngpu N]
+  python -m pilotvla.rollout_swap --out DIR --cond noiseopt [--gpu G --ngpu N]
 """
 import os
 import sys
@@ -49,9 +49,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np
 import torch
 
-from tano.pi05_adapter import get_adapter, save_video
-from tano.libero_utils import build_single_env, all_object_tids, get_env_handles
-from tano.metrics import (find_inst, body_xyz, episode_metrics, joint_qpos_slice,
+from pilotvla.pi05_adapter import get_adapter, save_video
+from pilotvla.libero_utils import build_single_env, all_object_tids, get_env_handles
+from pilotvla.metrics import (find_inst, body_xyz, episode_metrics, joint_qpos_slice,
                           LIFT_DZ, BASKET_R)
 
 CHUNK = 50
@@ -177,7 +177,7 @@ def install_guided_sampler(model):
             return best_x.detach()
 
         if _on and GCTX["mode"] == "noiseopt" and GCTX["g_xy"] is not None:
-            # TaNO: optimize ONLY the initial noise - the executed chunk is the
+            # PilotVLA: optimize ONLY the initial noise - the executed chunk is the
             # unmodified model's own output for the optimized noise, so the
             # search stays on the policy's output manifold.
             g = torch.as_tensor(GCTX["g_xy"], dtype=torch.float32, device=device)

@@ -2,7 +2,7 @@
 
 Adapted from the `Pi05Adapter` in action-atlas
 (https://github.com/CWRU-AISM/action-atlas, Apache License 2.0),
-trimmed to the pieces TaNO needs: model loading, the lerobot
+trimmed to the pieces PilotVLA needs: model loading, the lerobot
 pre/post-processor pipeline, and video saving.
 """
 import os

@@ -29,11 +29,11 @@ import libero  # noqa: E402  (must resolve to pkgshadow)
 assert "pkgshadow" in libero.__file__, libero.__file__
 
 sys.path.insert(0, os.path.dirname(LPD))  # repo root
-from tano.rollout_swap import (  # noqa: E402
+from pilotvla.rollout_swap import (  # noqa: E402
     install_guided_sampler, GCTX, eef_xyz, extract_action_affine)
-from tano.pi05_adapter import get_adapter, save_video  # noqa: E402
-from tano.libero_utils import build_single_env, get_env_handles  # noqa: E402
-from tano.metrics import find_inst, body_xyz  # noqa: E402
+from pilotvla.pi05_adapter import get_adapter, save_video  # noqa: E402
+from pilotvla.libero_utils import build_single_env, get_env_handles  # noqa: E402
+from pilotvla.metrics import find_inst, body_xyz  # noqa: E402
 # lerobot's helper assembles init-file paths directly; route through the
 # suite's own method instead (LIBERO-plus layout differs).
 import lerobot.envs.libero as _lel  # noqa: E402

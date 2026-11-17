@@ -6,15 +6,15 @@ Kyung Hee University
 Under review at KSC 2026 (Korea Software Congress)
 
 <p align="center">
-  <img src="assets/teaser.png" width="70%" alt="TaNO teaser">
+  <img src="assets/teaser.png" width="70%" alt="PilotVLA teaser">
 </p>
 
-**TaNO** (**Ta**rget-directed **N**oise **O**ptimization) is a zero-training,
+**PilotVLA** (**P**olicy steering via **I**nitial noise for **L**anguage-specified **O**bject **T**argeting) is a zero-training,
 test-time steering method for flow-matching VLA policies such as $\pi_{0.5}$.
 When the test-time instruction or object layout deviates from the training
 distribution (e.g., target objects are swapped), a frozen policy fails in a
 characteristically *directional* way: reaching and grasping stay intact, but
-the robot heads to where the target used to be during training. TaNO repairs
+the robot heads to where the target used to be during training. PilotVLA repairs
 these failures by optimizing **only the initial noise** of the flow-matching
 sampler: at every replanning step it backpropagates through a differentiable
 Euler unrolling of the flow ODE and minimizes a cosine loss between the
@@ -23,7 +23,7 @@ object. The model weights and inputs are untouched; only the horizontal (xy)
 action dimensions are steered; steering is released before manipulation.
 
 <p align="center">
-  <img src="assets/method.png" width="100%" alt="TaNO pipeline">
+  <img src="assets/method.png" width="100%" alt="PilotVLA pipeline">
 </p>
 
 ## Results
@@ -33,14 +33,14 @@ Swap benchmarks built on LIBERO (1,000 episodes per condition, paired seeds):
 | Method | Instruction swap | Position swap |
 |---|---|---|
 | Baseline (frozen $\pi_{0.5}$) | 28.6 | 10.6 |
-| **TaNO (ours)** | **66.0** | **55.0** |
+| **PilotVLA (ours)** | **66.0** | **55.0** |
 
 LIBERO-Plus robustness suite by perturbation axis (success rate, %):
 
 | Method | Language | Layout | Robot-Init |
 |---|---|---|---|
 | Baseline | 89 | **98** | 85 |
-| **TaNO (ours)** | **99** | 95 | **92** |
+| **PilotVLA (ours)** | **99** | 95 | **92** |
 
 > The goal coordinate is read from the simulator (an *oracle* goal signal), so
 > these numbers are an upper bound on what noise-space steering can recover
@@ -50,8 +50,8 @@ LIBERO-Plus robustness suite by perturbation axis (success rate, %):
 ## Repository layout
 
 ```
-tano/
-  rollout_swap.py    swap-benchmark rollouts (baseline / TaNO / extra baselines)
+pilotvla/
+  rollout_swap.py    swap-benchmark rollouts (baseline / PilotVLA / extra baselines)
   pi05_adapter.py    lerobot pi0.5 loading + processor pipeline
   libero_utils.py    LIBERO env helpers
   metrics.py         episode success metrics (asked-in-basket, lifts, reach)
@@ -67,7 +67,7 @@ scripts/
 ## Installation
 
 ```bash
-conda create -n tano python=3.10 -y && conda activate tano
+conda create -n pilotvla python=3.10 -y && conda activate pilotvla
 pip install -r requirements.txt
 # lerobot with pi0.5 + LIBERO simulation support:
 pip install "lerobot[libero]"
@@ -95,9 +95,9 @@ OUT=out/posswaproll CONDS="none noiseopt" NGPU=4 \
 **Paired statistics** (Wilson CIs, McNemar, scene-clustered bootstrap):
 
 ```bash
-python -m tano.paired_stats --root out/swaproll \
+python -m pilotvla.paired_stats --root out/swaproll \
   --key asked_in_basket --none-tag none --steer-tag noiseopt10x0.5-r10
-python -m tano.paired_stats --root out/posswaproll \
+python -m pilotvla.paired_stats --root out/posswaproll \
   --key env_success --none-tag posnone --steer-tag posnoiseopt10x0.5-r10
 ```
 
@@ -123,7 +123,7 @@ goal-perturbation robustness ablation.
 ## Citation
 
 ```bibtex
-@inproceedings{hong2026tano,
+@inproceedings{hong2026pilotvla,
   title     = {Act on What You See: Target-directed Noise Optimization for
                Frozen Flow-Matching Policies},
   author    = {Hong, Junpyo and Kim, Sunghun and Kim, Junho and Ahn, Geo and Choi, Jinwoo},
