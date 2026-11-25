@@ -6,8 +6,15 @@ Kyung Hee University
 KSC 2026 (Korea Software Congress)
 
 <p align="center">
-  <img src="assets/teaser.png" width="70%" alt="PilotVLA teaser">
+  <img src="assets/demo.gif" width="100%" alt="Unsteered pi0.5 vs. PilotVLA under a task perturbation">
 </p>
+
+Out-of-distribution task perturbation: this scene was only ever trained to pick
+up the salad dressing, but the instruction now asks for the tomato sauce. Both
+panels start from the same initial state and noise seed. Without steering,
+$\pi_{0.5}$ picks up the salad dressing it was trained on; PilotVLA steers it
+toward the tomato sauce for the first 10 replans and then releases control to the
+unmodified policy, which grasps and places on its own (playback 1.5×).
 
 **PilotVLA** (**P**olicy steering by **I**nitial-noise **L**atent **O**ptimization at **T**est time) is a training-free
 test-time steering method for flow-matching VLA policies such as $\pi_{0.5}$.
@@ -26,19 +33,6 @@ the task.
 <p align="center">
   <img src="assets/method.png" width="100%" alt="PilotVLA pipeline">
 </p>
-
-## Demo
-
-<p align="center">
-  <img src="assets/demo.gif" width="100%" alt="Unsteered pi0.5 vs. PilotVLA under a task perturbation">
-</p>
-
-Out-of-distribution task perturbation: this scene was only ever trained to pick
-up the salad dressing, but the instruction now asks for the tomato sauce. Both
-panels start from the same initial state and noise seed. Without steering,
-$\pi_{0.5}$ picks up the salad dressing it was trained on; PilotVLA steers it
-toward the tomato sauce for the first 10 replans and then releases control to the
-unmodified policy, which grasps and places on its own (playback 1.5×).
 
 ## Results
 
