@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
-"""Paired statistics for swap rollouts: baseline vs steered.
+"""Paired statistics for rollouts: baseline vs steered.
 
-Reads per-episode meta.json files written by pilotvla/rollout_swap.py and reports
+Reads per-episode meta.json files written by tools/rollout_libero.py or
+tools/rollout_liberoplus.py and reports
 Wilson CIs, the paired success-rate difference, a continuity-corrected McNemar
 test, a scene-clustered bootstrap, and a per-scene breakdown. Pairs are formed
 over episodes present in BOTH condition cells (identical seeds by design).
 
+Cells are <root>/<scene>/<tag>_<distractor>/ (task / position perturbation)
+or <root>/<task>/<tag>/ (LIBERO-Plus, pass --root OUT_DIR/<axis>).
+
 Usage:
-  python -m pilotvla.paired_stats --root OUT_DIR --key asked_in_basket \
+  python tools/paired_stats.py --root OUT_DIR --key asked_in_basket \
       --none-tag none --steer-tag noiseopt10x0.5-r10
-  python -m pilotvla.paired_stats --root OUT_DIR --key env_success \
+  python tools/paired_stats.py --root OUT_DIR --key env_success \
       --none-tag posnone --steer-tag posnoiseopt10x0.5-r10
+  python tools/paired_stats.py --root OUT_DIR/language --key env_success \
+      --none-tag none --steer-tag noiseopt10x0.5
 """
 import argparse
 import glob
@@ -47,7 +53,7 @@ def load(root, key, none_tag, steer_tag):
         parts = f.split("/")
         scene, cd, ep = parts[-4], parts[-3], parts[-2]
         for tag, store in ((none_tag, nd), (steer_tag, od)):
-            if cd.startswith(tag + "_"):
+            if cd == tag or cd.startswith(tag + "_"):   # LIBERO-Plus cells have no suffix
                 distr = cd[len(tag) + 1:]
                 try:
                     store[(scene, distr)][ep] = bool(json.load(open(f)).get(key))

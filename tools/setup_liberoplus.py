@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""One-time setup for LIBERO-Plus evaluation (lplus/lplus_roll.py).
+"""One-time setup for LIBERO-Plus evaluation (tools/rollout_liberoplus.py).
 
 Given a LIBERO-plus checkout (https://github.com/sylvestf/LIBERO-plus, with its
 released assets unpacked inside), this script builds - WITHOUT copying any
-data - the drop-in package that lplus_roll.py imports:
+data - the drop-in package that rollout_liberoplus.py imports, under
+work/liberoplus/ (git-ignored, machine-local):
 
   pkgshadow/libero/            a concrete `libero` package whose contents are
                                symlinks into the LIBERO-plus checkout
@@ -12,7 +13,7 @@ data - the drop-in package that lplus_roll.py imports:
   libero_config/config.yaml    LIBERO config pointing at the checkout
 
 Usage:
-  python lplus/setup_liberoplus.py --root /path/to/LIBERO-plus
+  python tools/setup_liberoplus.py --root /path/to/LIBERO-plus
 """
 import argparse
 import glob
@@ -54,7 +55,9 @@ def main():
     pkg = os.path.join(root, "libero", "libero")
     assert os.path.isdir(pkg), f"not a LIBERO-plus checkout: {pkg} missing"
 
-    lpd = os.path.dirname(os.path.abspath(__file__))
+    repo = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    lpd = os.path.join(repo, "work", "liberoplus")
+    os.makedirs(lpd, exist_ok=True)
 
     # 1) assets union: base package assets + the extra released asset pack(s)
     extra = sorted(glob.glob(os.path.join(pkg, "**", "LIBERO-plus*", "assets"),
@@ -90,7 +93,7 @@ def main():
                 f"datasets: {os.path.join(pkg, '..', 'datasets')}\n"
                 f"init_states: {os.path.join(pkg, 'init_files')}\n")
     print(f"[setup] config -> {os.path.join(cfg_dir, 'config.yaml')}")
-    print("[setup] done - lplus_roll.py is ready to run")
+    print("[setup] done - tools/rollout_liberoplus.py is ready to run")
 
 
 if __name__ == "__main__":

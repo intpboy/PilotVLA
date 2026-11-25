@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 """LIBERO-Plus steering rollouts (libero_spatial): none / oracle noiseopt.
 
-Run lplus/setup_liberoplus.py once first - it builds the pkgshadow package,
-the merged assets view, and the LIBERO config this script relies on.
+Run tools/setup_liberoplus.py once first - it builds the pkgshadow package,
+the merged assets view, and the LIBERO config (under work/liberoplus/) that
+this script relies on. Task instances come from annotations/liberoplus/.
 
 Isolation: LIBERO_CONFIG_PATH (dedicated config) + stripping libero meta-path
 hooks + pkgshadow (a concrete `libero` package) make the LIBERO-plus benchmark
@@ -12,8 +13,9 @@ correct bowl instance (among look-alike bowls). Success: the env's own signal.
 Seeds are matched across conditions; episodes with meta.json are skipped.
 
 Usage:
-  python lplus/lplus_roll.py --axis language --cond noiseopt --eps 10 \
+  python tools/rollout_liberoplus.py --axis language --cond noiseopt --eps 10 \
       --gpu G --ngpu N --out DIR
+  (or the pipeline script: scripts/liberoplus.sh)
 """
 import os
 import sys
@@ -21,19 +23,21 @@ import json
 import argparse
 import re
 
-LPD = os.path.dirname(os.path.abspath(__file__))
-os.environ["LIBERO_CONFIG_PATH"] = os.path.join(LPD, "libero_config")
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+WORK = os.path.join(REPO, "work", "liberoplus")        # built by tools/setup_liberoplus.py
+ANN = os.path.join(REPO, "annotations", "liberoplus")  # evaluated task instances
+os.environ["LIBERO_CONFIG_PATH"] = os.path.join(WORK, "libero_config")
 sys.meta_path = [f for f in sys.meta_path if "libero" not in repr(f).lower()]
-sys.path.insert(0, os.path.join(LPD, "pkgshadow"))
+sys.path.insert(0, os.path.join(WORK, "pkgshadow"))
 import libero  # noqa: E402  (must resolve to pkgshadow)
 assert "pkgshadow" in libero.__file__, libero.__file__
 
-sys.path.insert(0, os.path.dirname(LPD))  # repo root
-from pilotvla.rollout_swap import (  # noqa: E402
+sys.path.insert(0, REPO)
+from src.steering import (  # noqa: E402
     install_guided_sampler, GCTX, eef_xyz, extract_action_affine)
-from pilotvla.pi05_adapter import get_adapter, save_video  # noqa: E402
-from pilotvla.libero_utils import build_single_env, get_env_handles  # noqa: E402
-from pilotvla.metrics import find_inst, body_xyz  # noqa: E402
+from src.pi05_adapter import get_adapter, save_video  # noqa: E402
+from src.libero_utils import build_single_env, get_env_handles  # noqa: E402
+from src.metrics import find_inst, body_xyz  # noqa: E402
 # lerobot's helper assembles init-file paths directly; route through the
 # suite's own method instead (LIBERO-plus layout differs).
 import lerobot.envs.libero as _lel  # noqa: E402
@@ -52,7 +56,7 @@ _lel.get_task_init_states = _patched_gtis
 # LIBERO-plus envs resolve ../assets relative to realpath(__file__), which
 # escapes our symlinked view - force DIR_PATH to the pkgshadow package.
 import libero.libero.envs.bddl_base_domain as _bbd  # noqa: E402
-_bbd.DIR_PATH = os.path.join(LPD, "pkgshadow", "libero", "libero", "envs")
+_bbd.DIR_PATH = os.path.join(WORK, "pkgshadow", "libero", "libero", "envs")
 import numpy as np  # noqa: E402
 import torch  # noqa: E402
 
@@ -106,8 +110,8 @@ def main():
     vid_dir = os.path.join(args.out, "videos")
     os.makedirs(vid_dir, exist_ok=True)
 
-    sel = json.load(open(os.path.join(LPD, "selection.json")))
-    p2 = os.path.join(LPD, "selection2.json")   # Tier2 (camera/robotinit)
+    sel = json.load(open(os.path.join(ANN, "selection.json")))
+    p2 = os.path.join(ANN, "selection2.json")   # Tier2 (camera/robotinit)
     if os.path.exists(p2):
         sel += json.load(open(p2))
     sel = [s for s in sel if s["axis"] == AXIS_MAP[args.axis]]
@@ -212,7 +216,7 @@ def main():
                             f = f[0]
                         if f.dtype != np.uint8:
                             f = (f * 255).clip(0, 255).astype(np.uint8)
-                        frames.append(f[::-1, ::-1].copy())
+                        frames.append(f[::-1].copy())   # obs rows are bottom-up; no mirror
                     t_xyz = body_xyz(raw, t_inst)
                     ee = eef_xyz(raw)
                     t_track.append(t_xyz)

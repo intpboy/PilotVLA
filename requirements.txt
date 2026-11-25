@@ -7,4 +7,4 @@ imageio[ffmpeg]
 #   pip install "lerobot[libero]"
 # This provides the `lerobot` and `libero` imports (pi0.5 policy, LIBERO envs,
 # robosuite/MuJoCo simulation). For LIBERO-Plus evaluation, additionally clone
-# https://github.com/sylvestf/LIBERO-plus and run lplus/setup_liberoplus.py.
+# https://github.com/sylvestf/LIBERO-plus and run tools/setup_liberoplus.py.

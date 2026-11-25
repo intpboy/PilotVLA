@@ -2,15 +2,15 @@ This repository contains portions adapted from third-party projects:
 
 1. action-atlas (https://github.com/CWRU-AISM/action-atlas)
    License: Apache License 2.0
-   - pilotvla/pi05_adapter.py adapts the Pi05 model adapter (model loading and
+   - src/pi05_adapter.py adapts the Pi05 model adapter (model loading and
      the lerobot pre/post-processor pipeline) and the video-saving helper.
-   - pilotvla/libero_utils.py and pilotvla/metrics.py adapt LIBERO environment and
+   - src/libero_utils.py and src/metrics.py adapt LIBERO environment and
      evaluation helpers originally written for that project's experiment
      suite.
 
 2. lerobot (https://github.com/huggingface/lerobot)
    License: Apache License 2.0
-   - The steering-aware sampler in pilotvla/rollout_swap.py
+   - The steering-aware sampler in src/steering.py
      (install_guided_sampler) replicates the PI05 sample_actions integration
      loop from lerobot's modeling code, with steering terms added.
 
