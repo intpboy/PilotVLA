@@ -33,12 +33,12 @@ the task.
   <img src="assets/demo.gif" width="100%" alt="Unsteered pi0.5 vs. PilotVLA under a task perturbation">
 </p>
 
-Task perturbation: the instruction asks for the tomato sauce, but the scene comes
-from a task that was trained on the salad dressing. Both panels start from the
-same initial state and noise seed. Without steering, $\pi_{0.5}$ picks up the
-salad dressing it was trained on; PilotVLA steers it toward the tomato sauce for
-the first 10 replans and then releases control to the unmodified policy, which
-grasps and places on its own (playback 1.5×).
+Out-of-distribution task perturbation: this scene was only ever trained to pick
+up the salad dressing, but the instruction now asks for the tomato sauce. Both
+panels start from the same initial state and noise seed. Without steering,
+$\pi_{0.5}$ picks up the salad dressing it was trained on; PilotVLA steers it
+toward the tomato sauce for the first 10 replans and then releases control to the
+unmodified policy, which grasps and places on its own (playback 1.5×).
 
 ## Results
 
