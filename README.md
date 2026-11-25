@@ -27,6 +27,18 @@ the task.
   <img src="assets/method.png" width="100%" alt="PilotVLA pipeline">
 </p>
 
+## Demo
+
+<p align="center">
+  <img src="assets/demo.gif" width="80%" alt="Unsteered pi0.5 vs. PilotVLA on task and position perturbation">
+</p>
+
+Both columns start from the same initial state and noise seed. Without
+steering, $\pi_{0.5}$ reaches for the object it saw during training; PilotVLA
+steers it toward the instructed object for the first 10 replans and then hands
+control back to the unmodified policy, which grasps and places on its own
+(playback 2×).
+
 ## Results
 
 Success rate (%) on the LIBERO-based task- and position-perturbation
