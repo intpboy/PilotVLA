@@ -30,14 +30,15 @@ the task.
 ## Demo
 
 <p align="center">
-  <img src="assets/demo.gif" width="80%" alt="Unsteered pi0.5 vs. PilotVLA on task and position perturbation">
+  <img src="assets/demo.gif" width="100%" alt="Unsteered pi0.5 vs. PilotVLA under a task perturbation">
 </p>
 
-Both columns start from the same initial state and noise seed. Without
-steering, $\pi_{0.5}$ reaches for the object it saw during training; PilotVLA
-steers it toward the instructed object for the first 10 replans and then hands
-control back to the unmodified policy, which grasps and places on its own
-(playback 2×).
+Task perturbation: the instruction asks for the tomato sauce, but the scene comes
+from a task that was trained on the salad dressing. Both panels start from the
+same initial state and noise seed. Without steering, $\pi_{0.5}$ picks up the
+salad dressing it was trained on; PilotVLA steers it toward the tomato sauce for
+the first 10 replans and then releases control to the unmodified policy, which
+grasps and places on its own (playback 2×).
 
 ## Results
 
