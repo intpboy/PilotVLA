@@ -14,7 +14,7 @@ authors:
     given-names: Jinwoo
 preferred-citation:
   type: conference-paper
-  title: "PilotVLA: Training-Free Steering of Flow-Matching VLAs via Initial Noise"
+  title: "PilotVLA: Test-Time Steering of VLAs via Initial-Noise Optimization"
   authors:
     - family-names: Hong
       given-names: Junpyo

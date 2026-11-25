@@ -1,26 +1,27 @@
-# PilotVLA: Training-Free Steering of Flow-Matching VLAs via Initial Noise
+# PilotVLA: Test-Time Steering of VLAs via Initial-Noise Optimization
 
 **Junpyo Hong, Sunghun Kim, Junho Kim, Geo Ahn, Jinwoo Choi**
 Kyung Hee University
 
-Under review at KSC 2026 (Korea Software Congress)
+KSC 2026 (Korea Software Congress)
 
 <p align="center">
   <img src="assets/teaser.png" width="70%" alt="PilotVLA teaser">
 </p>
 
-**PilotVLA** (**P**olicy steering by **I**nitial-noise **L**atent **O**ptimization at **T**est time) is a zero-training,
+**PilotVLA** (**P**olicy steering by **I**nitial-noise **L**atent **O**ptimization at **T**est time) is a training-free
 test-time steering method for flow-matching VLA policies such as $\pi_{0.5}$.
 When the test-time instruction or object layout deviates from the training
-distribution (e.g., target objects are swapped), a frozen policy fails in a
-characteristically *directional* way: reaching and grasping stay intact, but
-the robot heads to where the target used to be during training. PilotVLA repairs
-these failures by optimizing **only the initial noise** of the flow-matching
-sampler: at every replanning step it backpropagates through a differentiable
-Euler unrolling of the flow ODE and minimizes a cosine loss between the
-predicted chunk's planar displacement and the direction toward the goal
-object. The model weights and inputs are untouched; only the horizontal (xy)
-action dimensions are steered; steering is released before manipulation.
+distribution (e.g., the requested object or the object positions change), a
+frozen policy fails in a characteristically *directional* way: reaching and
+grasping stay intact, but the robot heads to the object location seen during
+training. PilotVLA repairs these failures by optimizing **only the initial
+noise** of the flow-matching sampler: at every replanning step it
+backpropagates through a differentiable Euler unrolling of the flow ODE and
+minimizes a cosine loss between the displacement of the predicted action chunk
+and the direction toward the target object. The model weights and inputs are
+untouched, and steering is released early so that the frozen policy completes
+the task.
 
 <p align="center">
   <img src="assets/method.png" width="100%" alt="PilotVLA pipeline">
@@ -28,30 +29,35 @@ action dimensions are steered; steering is released before manipulation.
 
 ## Results
 
-Swap benchmarks built on LIBERO (1,000 episodes per condition, paired seeds):
+Success rate (%) on the LIBERO-based task- and position-perturbation
+benchmarks (1,000 episodes per model, paired seeds) and on three
+LIBERO-Plus axes (language 480, layout 340, robot initial pose 300 episodes):
 
-| Method | Instruction swap | Position swap |
-|---|---|---|
-| Baseline (frozen $\pi_{0.5}$) | 28.6 | 10.6 |
-| **PilotVLA (ours)** | **66.0** | **55.0** |
+| Model | Method | Task pert. | Position pert. | Lang. | Layout | R-Init |
+|---|---|---|---|---|---|---|
+| $\pi_{0.5}$ | Baseline | 28.6 | 10.6 | 89.2 | **98.2** | 85.0 |
+| | **PilotVLA** | **66.0** | **55.0** | **98.8** | 95.0 | **91.7** |
+| MolmoAct2 | Baseline | 35.3 | 28.1 | 90.8 | **99.4** | 75.7 |
+| | **PilotVLA** | **76.5** | **63.2** | **94.0** | 95.6 | **86.0** |
+| SmolVLA | Baseline | 0.5 | 0.6 | 16.2 | 47.1 | 31.0 |
+| | **PilotVLA** | **16.0** | **6.8** | **30.8** | **50.0** | **47.7** |
 
-LIBERO-Plus robustness suite by perturbation axis (success rate, %):
+This release contains the $\pi_{0.5}$ code; MolmoAct2 and SmolVLA were run
+with the same steering, unchanged except that MolmoAct2 uses its full chunk
+($K = 10$ instead of $K = 30$). Over a typical 30-replan episode on
+$\pi_{0.5}$, steering costs 236 vs. 151 TFLOPs (1.6×): the VLM backbone still
+runs once per replan, and gradients flow only through the action expert.
 
-| Method | Language | Layout | Robot-Init |
-|---|---|---|---|
-| Baseline | 89 | **98** | 85 |
-| **PilotVLA (ours)** | **99** | 95 | **92** |
-
-> The goal coordinate is read from the simulator (an *oracle* goal signal), so
-> these numbers are an upper bound on what noise-space steering can recover
-> when the goal direction is known — see the paper's discussion. The method
-> needs only a coarse planar direction, not a precise pose.
+> The target coordinate is read from the simulator (an *oracle* signal), so
+> these numbers show what noise-space steering can recover when the target
+> direction is known. The method needs only a coarse direction, not a
+> precise pose.
 
 ## Repository layout
 
 ```
 pilotvla/
-  rollout_swap.py    swap-benchmark rollouts (baseline / PilotVLA / extra baselines)
+  rollout_swap.py    task/position-perturbation rollouts (baseline / PilotVLA / extra baselines)
   pi05_adapter.py    lerobot pi0.5 loading + processor pipeline
   libero_utils.py    LIBERO env helpers
   metrics.py         episode success metrics (asked-in-basket, lifts, reach)
@@ -78,14 +84,16 @@ HuggingFace Hub on first use. Rendering uses MuJoCo EGL (headless).
 
 ## Usage
 
-**Instruction swap** (paper setting: fixed-horizon release, 10 replans = 50 steps):
+The code calls the two perturbation benchmarks *swap* (`swaproll`, `--posswap`).
+
+**Task perturbation** (paper setting: fixed-horizon release, 10 replans = 50 steps):
 
 ```bash
 OUT=out/swaproll CONDS="none noiseopt" NGPU=4 \
   EXTRA="--release_replans 10" bash scripts/run_swap.sh
 ```
 
-**Position swap**:
+**Position perturbation**:
 
 ```bash
 OUT=out/posswaproll CONDS="none noiseopt" NGPU=4 \
@@ -124,8 +132,7 @@ goal-perturbation robustness ablation.
 
 ```bibtex
 @inproceedings{hong2026pilotvla,
-  title     = {PilotVLA: Training-Free Steering of Flow-Matching VLAs via
-               Initial Noise},
+  title     = {PilotVLA: Test-Time Steering of VLAs via Initial-Noise Optimization},
   author    = {Hong, Junpyo and Kim, Sunghun and Kim, Junho and Ahn, Geo and Choi, Jinwoo},
   booktitle = {Korea Software Congress (KSC)},
   year      = {2026}
